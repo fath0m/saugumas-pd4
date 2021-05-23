@@ -19,7 +19,10 @@
                 <input type="text" name="password" id="password" required>
             </td>
             <td>
-                <button type="button">generate</button>
+                <button
+                        type="button"
+                        onclick="document.getElementById('password').value = Math.random().toString(36).slice(2);"
+                >generate</button>
             </td>
         </tr>
 
