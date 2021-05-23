@@ -1,0 +1,6 @@
+{
+    "name": "jonas/password-manager",
+    "require": {
+        "league/plates": "^3.4"
+    }
+}
