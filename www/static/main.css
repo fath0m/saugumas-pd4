@@ -1,0 +1,29 @@
+body {
+    max-width: 728px;
+    margin: 20px auto;
+    font-family: Verdana, sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+    padding: 0 8px;
+    color: #444;
+}
+
+input, button, textarea {
+    font-family: Verdana, sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+form > table td {
+    padding: 5px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin: 0;
+}
+
+hr {
+    border: 0;
+    border-bottom: 2px solid #444444;
+}

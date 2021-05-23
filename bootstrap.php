@@ -9,5 +9,8 @@ function get_incl(string $file) : string
     return __DIR__ . "/" . $file . ".php";
 }
 
+define('STORAGE_LOCATION', __DIR__ . "/storage/");
+
+include_once get_incl("utils/session");
 include_once get_incl("utils/http");
 include_once get_incl("utils/template");
