@@ -42,6 +42,18 @@
         </tr>
     <?php endif; ?>
 
+    <script>
+        function textToClipboard(text) {
+            var dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            alert("Password has been copied");
+        }
+    </script>
+
 
     <?php foreach ($passwords as $index => $password): ?>
         <tr id="pw_<?= $index ?>">
@@ -53,8 +65,9 @@
 
                 <?php if (isset($_GET["$index"])): ?>
                     <?= password_decrypt($password["password"]) ?>
+                    (<a href="#" onclick="textToClipboard(`<?= password_decrypt($password["password"]) ?>`)">copy</a>)
                 <?php else: ?>
-                    <a href="?<?= $index ?>=show#pw_<?= $index ?>">
+                    <a href="?<?= $index ?>=show">
                         ***************
                     </a>
                 <?php endif; ?>
@@ -66,7 +79,7 @@
             </td>
 
             <td align="right">
-                <a href="#">
+                <a href="/edit.php?id=<?= $index ?>">
                     edit
                 </a>
             </td>
