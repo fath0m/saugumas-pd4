@@ -13,7 +13,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         $description = $_POST["description"];
 
         $current = get_file_by_username(user()["username"]);
-        $new = array_merge($current, [$name, $password, $description]);
+        $new = array_merge($current, [$name, password_encrypt($password), $description]);
         write_file_by_username(user()["username"], $new);
 
         break;

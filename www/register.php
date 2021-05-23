@@ -25,6 +25,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
 
         set_user([
             "username" => $username,
+            "password" => $password,
         ]);
 
         redirect("/", "Account created successfully!");

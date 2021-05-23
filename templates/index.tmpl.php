@@ -15,7 +15,7 @@
 
 <br />
 
-<table class="w-100">
+<table class="w-100 passwords-table">
     <tr>
         <th align="left">
             Name
@@ -34,16 +34,31 @@
         </th>
     </tr>
 
-    <?php foreach ($passwords as $index => $password): ?>
+    <?php if(!sizeof($passwords)): ?>
         <tr>
+            <td colspan="100%">
+                You don't have any passwords yet.
+            </td>
+        </tr>
+    <?php endif; ?>
+
+
+    <?php foreach ($passwords as $index => $password): ?>
+        <tr id="pw_<?= $index ?>">
             <td>
                 <?= $this->e($password["name"]) ?>
             </td>
 
             <td>
-                <a href="?<?= $index ?>=show">
-                    ***************
-                </a>
+
+                <?php if (isset($_GET["$index"])): ?>
+                    <?= password_decrypt($password["password"]) ?>
+                <?php else: ?>
+                    <a href="?<?= $index ?>=show#pw_<?= $index ?>">
+                        ***************
+                    </a>
+                <?php endif; ?>
+
             </td>
 
             <td>

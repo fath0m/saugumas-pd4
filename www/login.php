@@ -17,6 +17,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
 
         set_user([
             "username" => $username,
+            "password" => $password,
         ]);
 
         redirect("/", "Logged in successfully");
