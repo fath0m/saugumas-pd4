@@ -1,17 +1,13 @@
 <?php
 
-function redirect(string $url, string $error = null, string $success = null) : void
+function redirect(string $url, string $message = null) : void
 {
     if ($url === "back") {
         $url = $_SERVER['HTTP_REFERER'];
     }
 
-    if ($error) {
-        set_error($error);
-    }
-
-    if ($success) {
-        set_success($success);
+    if ($message) {
+        set_message($message);
     }
 
     header('Location: ' . $url, true, 303);
