@@ -15,6 +15,13 @@
 
 		<hr />
 
+        <?php if (user()): ?>
+
+            [<a href="/">passwords</a>]
+            [<a href="/new.php">new password</a>]
+            [<a href="/logout.php">logout</a>]
+        <?php endif; ?>
+
 		<?php if(message()): ?>
 			<p>
 				<?= $this->e(message()) ?>

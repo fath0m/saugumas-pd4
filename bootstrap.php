@@ -16,3 +16,5 @@ include_once get_incl("utils/files");
 include_once get_incl("utils/session");
 include_once get_incl("utils/http");
 include_once get_incl("utils/template");
+
+include_once get_incl("middleware/auth");

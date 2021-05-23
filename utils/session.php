@@ -2,7 +2,7 @@
 
 function set_user($user = []) : void
 {
-	$_SESSION["user"] = set_user();
+	$_SESSION["user"] = $user;
 }
 
 function user() : ?array
