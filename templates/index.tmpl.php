@@ -4,7 +4,7 @@
     <table>
         <tr>
             <th>
-                <input name="search" type="text" required />
+                <input name="search" type="text" required value="<?= $_GET["search"] ?? "" ?>" />
             </th>
             <th>
                 <button type="submit">Search</button>
@@ -37,7 +37,7 @@
     <?php if(!sizeof($passwords)): ?>
         <tr>
             <td colspan="100%">
-                You don't have any passwords yet.
+                <?= isset($_GET["search"]) ? "No passwords were found." : "You don't have any passwords yet." ?>
             </td>
         </tr>
     <?php endif; ?>
@@ -67,7 +67,7 @@
                     <?= password_decrypt($password["password"]) ?>
                     (<a href="#" onclick="textToClipboard(`<?= password_decrypt($password["password"]) ?>`)">copy</a>)
                 <?php else: ?>
-                    <a href="?<?= $index ?>=show">
+                    <a href="<?= querystring_append("$index=show") ?>">
                         ***************
                     </a>
                 <?php endif; ?>
