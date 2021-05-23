@@ -16,6 +16,8 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         $new = array_merge($current, [$name, password_encrypt($password), $description]);
         write_file_by_username(user()["username"], $new);
 
+        redirect("/", "Password saved");
+
         break;
 
     default:
