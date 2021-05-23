@@ -53,6 +53,10 @@ table.passwords-table td {
     padding: 5px 10px;
 }
 
-table.passwords-table tr:nth-child(odd) {
+table.passwords-table tr:first-child {
+    background-color: #f2f2f2;
+}
+
+table.passwords-table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
