@@ -20,6 +20,8 @@
             [<a href="/">passwords</a>]
             [<a href="/new.php">new password</a>]
             [<a href="/logout.php">logout</a>]
+
+            <br /> <br/>
         <?php endif; ?>
 
 		<?php if(message()): ?>
